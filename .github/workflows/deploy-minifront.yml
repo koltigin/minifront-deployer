@@ -67,7 +67,7 @@ jobs:
 #       VERCEL_ORG_ID: Get from https://vercel.com/<TEAM NAME>/~/settings#team-id
 #       VERCEL_PROJECT_ID: Get from https://vercel.com/<TEAM NAME>/<PROJECT NAME>/settings
 #       VERCEL_TOKEN: Create one here https://vercel.com/<TEAM NAME>/<PROJECT NAME>/settings/environment-variables
-
+#  
       - name: Install Vercel CLI
         run: pnpm add --global vercel@latest
 

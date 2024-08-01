@@ -14,47 +14,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 #   🛠️ ========== Needed to build minifront ========== 🛠️
-#      - name: Checkout repository
-#        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-#      - name: Setup pnpm
-#        uses: pnpm/action-setup@v4
-#        with:
-#          version: 9
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
-#      - name: Setup Node.js
-#        uses: actions/setup-node@v4
-#        with:
-#          node-version: '22'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
-#      - name: Setup Rust toolchain
-#        uses: dtolnay/rust-toolchain@stable
-#        with:
-#          targets: wasm32-unknown-unknown
+      - name: Setup Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
 
-#     - name: Setup wasm-pack
-#       uses: jetli/wasm-pack-action@v0.4.0
-#        with:
-#          version: 'latest'
+     - name: Setup wasm-pack
+       uses: jetli/wasm-pack-action@v0.4.0
+        with:
+          version: 'latest'
 
-#      - name: Clone Penumbra Web repo
-#        run: git clone https://github.com/penumbra-zone/web
+      - name: Clone Penumbra Web repo
+        run: git clone https://github.com/penumbra-zone/web
 
-#      - name: Install dependencies
-#        run: pnpm install
-#        working-directory: ./web
-#        env:
-#          NODE_OPTIONS: --max-old-space-size=4096 # Increase Node.js heap size given memory-intensive steps
+      - name: Install dependencies
+        run: pnpm install
+        working-directory: ./web
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096 # Increase Node.js heap size given memory-intensive steps
 
-#      - name: Disable Turbo Telemetry
-#        run: pnpm turbo telemetry disable
-#        working-directory: ./web
+      - name: Disable Turbo Telemetry
+        run: pnpm turbo telemetry disable
+        working-directory: ./web
 
-#      - name: Build Minifront
-#        run: pnpm turbo run build --filter=./apps/minifront --concurrency=1
-#        working-directory: ./web
-#        env:
-#          NODE_OPTIONS: --max-old-space-size=4096 # Increase Node.js heap size
+      - name: Build Minifront
+        run: pnpm turbo run build --filter=./apps/minifront --concurrency=1
+        working-directory: ./web
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096 # Increase Node.js heap size
 #   🛠️ =========================================================== 🛠️
 #       Replace below with your hosting provider of choice!
 
